@@ -1,8 +1,9 @@
 @import "tailwindcss/preflight";
+@import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 :root {
-  --background: #FF6F3C;
+  --background: #F6F6F3;
   --foreground: #171717;
 
   --brand-primary: #FF6F3C;     /* Sunrise Orange */
