@@ -1,28 +1,26 @@
+/* globals.css – Tailwind CSS v4 global styles */
 @import "tailwindcss/preflight";
-@import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-  --background: #F6F6F3;
-  --foreground: #171717;
+/* Define custom theme variables for Tailwind v4 */
+@theme {
+  /* Brand colors (Sunrise Orange, Midnight Blue, Off-White) */
+  --color-primary: #FF6F3C;
+  --color-secondary: #2B2F4A;
+  --color-accent: #F5F5F5;
 
-  --brand-primary: #FF6F3C;     /* Sunrise Orange */
-  --brand-secondary: #2B2F4A;   /* Midnight Blue */
-  --brand-accent: #F5F5F5;      /* Off-White */
-
-  --font-montserrat: 'Montserrat', sans-serif;
-  --font-lato: 'Lato', sans-serif;
+  /* Brand fonts (Montserrat for display, Lato for body text) */
+  --font-family-display: "Montserrat", sans-serif;
+  --font-family-body: "Lato", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #f5f5f5;
+/* (Optional) Base layer customizations */
+@layer base {
+  /* Use Lato as the default body font and set base text color */
+  body {
+    font-family: var(--font-family-body);
+    color: var(--color-secondary);
+    background-color: #FFFFFF; /* White page background */
+    margin: 0;
   }
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-lato);
 }

@@ -1,34 +1,24 @@
-import './globals.css'
-import { Metadata } from 'next'
-import { Montserrat, Lato } from 'next/font/google'
+// app/layout.tsx (Next.js 15.4 App Router layout)
+import React, { ReactNode } from 'react';
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['700'],
-  variable: '--font-montserrat',
-})
+export const metadata = { title: "Eclipsed Citadel" };  // example metadata
 
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-lato',
-})
-
-export const metadata: Metadata = {
-  title: 'Eclipsed Citadel',
-  description: 'AI-Powered Marketing & Content Solutions for Small Businesses',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${lato.variable}`}>
-      <body className="bg-background text-foreground font-sans">
-        {children}
+    <html lang="en">
+      <body className="min-h-screen flex flex-col font-body text-secondary bg-white">
+        {/* Top Navigation Bar */}
+        <nav className="w-full bg-secondary text-accent px-4 py-3 flex items-center">
+          {/* Logo Image */}
+          <img src="/logo.svg" alt="Eclipsed Citadel Logo" className="h-8 w-auto" />
+          {/* (You can add nav links or buttons here if needed) */}
+        </nav>
+
+        {/* Main content area */}
+        <main className="flex-grow">
+          {children}
+        </main>
       </body>
     </html>
-  )
+  );
 }
